@@ -51,6 +51,27 @@
                     </div>
                 </div>
             </div>
+            <div class="mb-3 row">
+                <label for="region" class="col-form-label col-sm-2">Region</label>
+                <div class="col-sm-6">
+
+                    <select [compareWith]="compararRegion" class="form-control" [(ngModel)]="cliente.region" name="region"> 
+                        <option [ngValue]="undefined">--Seleccionar--</option>
+                        <option [ngValue]="region" *ngFor="let region of regiones">{{region.nombre}}</option>
+                    </select>
+                   
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="createAt" class="col-form-label col-sm-2">Fecha de Creacion</label>
+                <div class="col-sm-6">
+
+                    <input matInput [matDatepicker]="picker" class="form-control" [(ngModel)]="cliente.createAt" name="createAt" style="display: inline;width: 350px;">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </div>
+            </div>
 
             <div class="mb-3 row">
                 <div class="col-sm-6">
